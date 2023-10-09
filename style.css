@@ -1,0 +1,147 @@
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(fondo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+form{
+
+    position: relative;
+    width: 410px;
+    height: 330px;
+
+}
+
+.contenido{
+
+    width: 55%;
+    display: inline-block;
+
+
+}
+
+div p{
+
+    width: 40%;
+    display: inline-block;
+
+}
+
+h1 {
+
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    font-size: 50px;
+
+
+}
+
+h2{
+
+    color: aliceblue; 
+    font-weight: bold;
+
+}
+
+
+
+
+
+p {
+    display: inline;
+    margin-right: 5px;
+    color:rgb(237, 234, 255);
+}
+
+div.boton input{
+
+    height: 40px;
+    width: 310px;
+    background-color: transparent;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 5rem;
+    cursor: pointer;
+
+
+}
+
+div.boton input#publicar{
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+div#vista{
+
+    position: relative;
+    border: 2px solid #eee;
+    padding: 10px;
+    width: fit-content;
+    color: #ffffff;
+    min-height: 100px;
+    min-width: 250px;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 20px;
+
+}
+
+img {
+
+    height: 18px;
+    width: 18px;
+
+}
+
+div#fecha {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: aliceblue;
+
+}
+
+a{
+
+    
+    height: 40px;
+    width: 310px;
+    background-color: transparent;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border: 2px solid #eee;
+    border-radius: 5rem;
+    cursor: pointer;
+
+
+}
+
+
+
+.publicaciones{
+
+    position: absolute;
+    top: 540px;
+}
