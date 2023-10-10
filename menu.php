@@ -1,4 +1,7 @@
 
+
+
+<?php session_start();?>
 <a href="login/logout.php" id="cerrarSesion">Cerrar sesion</a>
 
 
@@ -7,5 +10,4 @@
 <?php include_once "modelo/servicios/servicioPublicaciones.php" ?>
 <?php include_once "login/autenticacion.php"?>
 <?php include_once "modelo/servicios/servicioAutenticacion.php" ?>
-<?php Autenticacion::obtenerNombreUsuario();?>
-<?php session_start();?>
+<?php echo Autenticacion::obtenerNombreUsuario();?>

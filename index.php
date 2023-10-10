@@ -1,5 +1,5 @@
-<?php include_once "menu.php" ?>
 
+<?php include_once "menu.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +13,8 @@
 
 <body>
 
+
     <form method="POST" action="publicar.php">
-
-        <h1>esta es una prueba</h1>
-
         <?php
 
         $publicacion = publicacion::fromBody();
@@ -24,6 +22,14 @@
         $publicaciones = array();
 
         $publicaciones = servicioPublicaciones::obtenerPublicacion();
+
+        if(!Autenticacion::estaAutenticado()){
+
+            header("Location: login/login.php");
+            exit();
+
+
+        }
 
         ?>
 
