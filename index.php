@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <form method="POST" action="publicar.php">
 
         <?php
