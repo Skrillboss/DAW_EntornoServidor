@@ -15,6 +15,8 @@
 
     <form method="POST" action="publicar.php">
 
+        <h1>esta es una prueba</h1>
+
         <?php
 
         $publicacion = publicacion::fromBody();
