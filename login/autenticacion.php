@@ -10,7 +10,7 @@ class Autenticacion
 
     public static function estaAutenticado(){
 
-        return isset($_SESSION["usuario"]);
+        return isset($_SESSION[self::usuario]);
 
     }
 
@@ -19,7 +19,7 @@ class Autenticacion
 
         if (self::estaAutenticado()) {
 
-            return $_SESSION["usuario"];
+            return $_SESSION[self::usuario];
         } else {
 
             return "";
