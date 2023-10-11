@@ -1,14 +1,23 @@
-<?php include_once "../modelo/servicios/servicioAutenticacion.php" ?>
+
 
 <?php
 
 class Autenticacion
 {
 
+    const usuario = "usuario";
+    const cookieUsuario = "usuario";
+
+    public static function estaAutenticado(){
+
+        return isset($_SESSION["usuario"]);
+
+    }
+
     public static function obtenerNombreUsuario()
     {
 
-        if (isset($_SESSION["usuario"])) {
+        if (self::estaAutenticado()) {
 
             return $_SESSION["usuario"];
         } else {
@@ -22,11 +31,24 @@ class Autenticacion
         if (ServicioAutenticacion::validarUsuarioContrasena($usuario, $contrasena)) {
 
             $_SESSION["usuario"] = $usuario;
+
+            setcookie("usuario", $usuario);
             return true;
         } else {
 
             return false;
         }
+    }
+
+    public static function obtenerCookieUsuario(){
+
+        if(isset($_COOKIE[self::cookieUsuario])){
+
+            return $_COOKIE[self::cookieUsuario];
+
+
+        }
+
     }
 }
 

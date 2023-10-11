@@ -1,5 +1,6 @@
 <?php include_once "../cabecera.html" ?>
 <?php include_once "autenticacion.php" ?>
+<?php include_once "../modelo/servicios/servicioAutenticacion.php" ?>
 
 
 
@@ -16,6 +17,14 @@
     <form method="POST" action="login.php">
 
         <?php
+        session_start();
+
+        if (Autenticacion::estaAutenticado()) {
+
+            header("Location: ../index.php");
+
+            exit();
+        }
 
         if (isset($_POST["usuario"]) && isset($_POST["contrasena"])) {
 
@@ -34,7 +43,7 @@
         ?>
 
         <div>
-            <p>Usuario</p><input class="contenido" type="text" name="usuario">
+            <p>Usuario</p><input class="contenido" type="text" name="usuario" value="<?php echo Autenticacion::obtenerCookieUsuario();?>">
         </div>
 
         <div>

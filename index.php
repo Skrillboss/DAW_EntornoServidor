@@ -23,6 +23,13 @@
 
         $publicaciones = servicioPublicaciones::obtenerPublicacion();
 
+        if(!Autenticacion::estaAutenticado()){
+
+            header("Location: login/login.php");
+
+            exit();
+        }
+
         ?>
 
 
