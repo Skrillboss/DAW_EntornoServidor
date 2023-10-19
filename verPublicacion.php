@@ -6,7 +6,7 @@
             echo $publicacion->nombre;
             if ($publicacion->usuario == "usuarioPago") :
             ?>
-                <img src="estrella.png" alt="Estrella">
+                <img src="style/estrella.png" alt="Estrella">
 
             <?php endif; ?>
 
