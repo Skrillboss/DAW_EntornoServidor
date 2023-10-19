@@ -10,12 +10,14 @@
 </head>
 
 <body>
+    <p class="nombreUsuario"><?php echo $nombreUsuario; ?></p>
 
     <?php
 
     $publicacion = publicacion::fromBody();
 
     ?>
+
 
     <form method="POST" action="publicar.php">
 
@@ -37,7 +39,7 @@
         <?php else : ?>
             <h2>Vas a publicar el siguiente mensaje:</h2>
 
-            <?php include("verPublicacion.php") ?>
+            <?php include("verPublicacion.php"); ?>
 
             <div class="boton"><input type="submit" value="Aceptar" name="aceptar"></div>
             <div class="boton"><input type="submit" value="Cancelar" formaction="index.php"></div>

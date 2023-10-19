@@ -12,7 +12,9 @@
 </head>
 
 <body>
+<p class="nombreUsuario"><?php echo $nombreUsuario; ?></p>
 
+    
     <form method="POST" action="publicar.php">
 
         <?php
@@ -23,7 +25,7 @@
 
         $publicaciones = servicioPublicaciones::obtenerPublicacion();
 
-        if(!Autenticacion::estaAutenticado()){
+        if (!Autenticacion::estaAutenticado()) {
 
             header("Location: login/login.php");
 
@@ -32,22 +34,23 @@
 
         ?>
 
+        <div class="contenedorPadre">
+            <div class="contenedor">
+                <p>Nombre del usuario</p><input class="contenido" type="text" name="nombre" value="<?php echo $publicacion->nombre; ?>">
+            </div>
 
-        <div>
-            <p>Nombre del usuario</p><input class="contenido" type="text" name="nombre" value="<?php echo $publicacion->nombre; ?>">
-        </div>
+            <div class="contenedor">
+                <p>Usuario normal/de pago</p><select class="contenido" name="usuario">
 
-        <div>
-            <p>Usuario normal/de pago</p><select class="contenido" name="usuario">
+                    <option value="usuarioNormal" <?php if ($publicacion->usuario == "ususarioNormal") {echo "selected";} ?>>Usuario normal</option>
+                    <option value="usuarioPago" <?php if ($publicacion->usuario == "usuarioPago") {echo "selected";} ?>>Usario de pago</option>
 
-                <option value="usuarioNormal" <?php if ($publicacion->usuario == "ususarioNormal") {echo "selected";} ?>>Usuario normal</option>
-                <option value="usuarioPago" <?php if ($publicacion->usuario == "usuarioPago") {echo "selected";} ?>>Usario de pago</option>
+                </select>
+            </div>
 
-            </select>
-        </div>
-
-        <div>
-            <p>Texto del mensaje</p><input class="contenido" type="text" name="texto" value="<?php echo $publicacion->texto; ?>">
+            <div class="contenedor">
+                <p>Texto del mensaje</p><input class="contenido" type="text" name="texto" value="<?php echo $publicacion->texto; ?>">
+            </div>
         </div>
 
         <div class="boton"><input id="publicar" type="submit" value="Publicar"></div>
@@ -55,23 +58,22 @@
     </form>
     <div class="publicaciones">
 
-    <?php if(count($publicaciones) > 0):?>
+        <?php if (count($publicaciones) > 0) : ?>
 
 
-    <h2>Publicaciones realizadas</h2>
+            <h2>Publicaciones realizadas</h2>
 
-    <?php endif;?>
+        <?php endif; ?>
 
-    
-    <?php  
 
-       foreach($publicaciones as $publicacion){
+        <?php
+
+        foreach ($publicaciones as $publicacion) {
 
             include "verPublicacion.php";
+        }
 
-       } 
-    
-    ?>
+        ?>
 
     </div>
 

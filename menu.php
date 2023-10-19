@@ -7,4 +7,4 @@
 <?php include_once "login/autenticacion.php"?>
 <?php include_once "modelo/servicios/servicioAutenticacion.php" ?>
 <?php session_start();?>
-<?php echo Autenticacion::obtenerNombreUsuario();?>
+<?php $nombreUsuario = Autenticacion::obtenerNombreUsuario();?>
