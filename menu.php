@@ -8,3 +8,4 @@
 <?php include_once "modelo/servicios/servicioAutenticacion.php" ?>
 <?php session_start();?>
 <?php $nombreUsuario = Autenticacion::obtenerNombreUsuario();?>
+<?php include_once "modelo/mySQL/mysqlbd.php"; ?>

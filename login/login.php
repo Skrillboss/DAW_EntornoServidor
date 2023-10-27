@@ -1,6 +1,8 @@
 <?php include_once "../cabecera.html" ?>
 <?php include_once "autenticacion.php" ?>
 <?php include_once "../modelo/servicios/servicioAutenticacion.php" ?>
+<?php include_once "../modelo/mySQL/mysqlbd.php"; ?>
+
 
 
 
