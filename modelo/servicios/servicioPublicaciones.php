@@ -5,7 +5,7 @@
     
         public static function obtenerPublicacion()
         {
-            $resultado = MySqlBd::consultaLectura("SELECT * FROM mensaje");
+            $resultado = MySqlBd::consultaLectura("SELECT * FROM mensajes");
 
             $retorno = array();
 
@@ -24,7 +24,7 @@
         {
             $usuario = $publicacion->usuario == "depago" ? 1 : 0;
             $fecha = $publicacion->fecha->format("c");
-            $consulta = "INSERT INTO mensaje (nombre, depago, texto, fecha)
+            $consulta = "INSERT INTO mensajes (nombre, depago, texto, fecha)
             VALUES (?, ?, ?, ?)";
 
             MySqlBd::consultaEscritura($consulta, $publicacion->nombre, $usuario, $publicacion->texto, $fecha);

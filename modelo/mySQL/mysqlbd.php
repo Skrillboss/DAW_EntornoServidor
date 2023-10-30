@@ -12,7 +12,7 @@ class MySqlBd
 
         if(!$conexion){
 
-            $conexion = new mysqli($config["host"], $config["user"], $config["pass"], $config["bd"], $config["port"]);
+            $conexion = new mysqli($config["host"], $config["user"], $config["pass"], $config["bd"]);
         }
         return $conexion;
 
