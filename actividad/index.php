@@ -12,9 +12,9 @@
 </head>
 
 <body>
-<p class="nombreUsuario"><?php echo $nombreUsuario; ?></p>
+    <p class="nombreUsuario"><?php echo $nombreUsuario; ?></p>
 
-    
+
     <form method="POST" action="publicar.php">
 
         <?php
@@ -24,13 +24,6 @@
         $publicaciones = array();
 
         $publicaciones = servicioPublicaciones::obtenerPublicacion();
-
-        if (!Autenticacion::estaAutenticado()) {
-
-            header("Location: login/login.php");
-
-            exit();
-        }
 
         ?>
 
@@ -42,8 +35,12 @@
             <div class="contenedor">
                 <p>Usuario normal/de pago</p><select class="contenido" name="usuario">
 
-                    <option value="usuarioNormal" <?php if ($publicacion->usuario == "ususarioNormal") {echo "selected";} ?>>Usuario normal</option>
-                    <option value="usuarioPago" <?php if ($publicacion->usuario == "usuarioPago") {echo "selected";} ?>>Usario de pago</option>
+                    <option value="usuarioNormal" <?php if ($publicacion->usuario == "ususarioNormal") {
+                                                        echo "selected";
+                                                    } ?>>Usuario normal</option>
+                    <option value="usuarioPago" <?php if ($publicacion->usuario == "usuarioPago") {
+                                                    echo "selected";
+                                                } ?>>Usario de pago</option>
 
                 </select>
             </div>
