@@ -12,4 +12,9 @@ class ServicioAutenticacion
 
         return count($resultado) == 1 && $resultado[0]["contrasena"] == $hash;
     }
+
+    public static function validarApiKey($apiKey)
+    {
+        return $apiKey == "12345678";
+    }
 }

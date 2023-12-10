@@ -8,10 +8,14 @@ include_once "modelo/dao/daoPublicacionesMySql.php";
 include_once "modelo/dao/daoPublicacionesSesion.php";
 include_once "modelo/dao/factoriaDao.php";
 include_once "dto/publicacionDto.php";
+include_once "modelo/servicios/servicioAutenticacion.php";
+include_once "comun/autorizacion.php";
 
 $BadRequestCode = 400;
+$UnauthorizedCode = 401;
 $NotFoundCode = 404;
 $MethodNotAllowedCode = 405;
+
 
 $metodo = $_SERVER["REQUEST_METHOD"];
 
