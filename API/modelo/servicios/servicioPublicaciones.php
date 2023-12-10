@@ -1,6 +1,6 @@
  <?php
 
-    class servicioPublicaciones
+    class ServicioPublicaciones
     {
         public static function insertarPublicacion($publicacion)
         {
@@ -26,7 +26,7 @@
             $daoOfertas->eliminar($id);
         }
 
-        public static function obtenerPublicacion()
+        public static function obtenerPublicaciones()
         {
             $daoOfertas = FactoriaDao::getDaoPublicaciones();
             return $daoOfertas->listar();

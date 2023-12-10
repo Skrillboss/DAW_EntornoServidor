@@ -29,8 +29,7 @@ class DaoPublicacionesMySql
     }
     public function eliminar($id)
     {
-        $consulta = "DELETE mensajes WHERE id = ?";
-
+        $consulta = "DELETE FROM mensajes WHERE id = ?";
         MySqlBd::consultaEscritura($consulta, $id);
     }
     public function listar()
@@ -51,6 +50,6 @@ class DaoPublicacionesMySql
         $dePago = $publicacion["depago"] ? "usuarioPago" : "usuarioNormal";
         $fecha = new DateTime($publicacion["fecha"]);
 
-        return new publicacion($publicacion["nombre"], $dePago, $publicacion["texto"], $fecha);
+        return new publicacion($publicacion["id"], $publicacion["nombre"], $dePago, $publicacion["texto"], $fecha);
     }
 }
