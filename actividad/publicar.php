@@ -14,9 +14,10 @@
 
     <?php
 
-    $publicacion = publicacion::fromBody();
+    $publicacion = publicacionVista::fromBody();
 
     ?>
+
 
 
     <form method="POST" action="publicar.php">

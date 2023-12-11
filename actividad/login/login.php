@@ -1,7 +1,8 @@
 <?php include_once "../cabecera.html" ?>
 <?php include_once "autenticacion.php" ?>
 <?php include_once "../modelo/servicios/servicioAutenticacion.php" ?>
-<?php include_once "../modelo/mySQL/mysqlbd.php"; ?>
+<?php include_once "../modelo/dto/loginDto.php"; ?>
+<?php include_once "../modelo/rest/apiHelper.php" ?>
 
 
 
@@ -17,7 +18,7 @@
 </head>
 
 <body>
- 
+
     <form method="POST" action="login.php">
 
         <?php
@@ -47,7 +48,7 @@
         ?>
 
         <div>
-            <p>Usuario</p><input class="contenido" type="text" name="usuario" value="<?php echo Autenticacion::obtenerCookieUsuario();?>">
+            <p>Usuario</p><input class="contenido" type="text" name="usuario" value="<?php echo Autenticacion::obtenerCookieUsuario(); ?>">
         </div>
 
         <div>

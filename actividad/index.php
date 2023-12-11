@@ -19,7 +19,7 @@
 
         <?php
 
-        $publicacion = publicacion::fromBody();
+        $publicacion = publicacionVista::fromBody();
 
         $publicaciones = array();
 
@@ -35,7 +35,7 @@
             <div class="contenedor">
                 <p>Usuario normal/de pago</p><select class="contenido" name="usuario">
 
-                    <option value="usuarioNormal" <?php if ($publicacion->usuario == "ususarioNormal") {
+                    <option value="usuarioNormal" <?php if ($publicacion->usuario == "usuarioNormal") {
                                                         echo "selected";
                                                     } ?>>Usuario normal</option>
                     <option value="usuarioPago" <?php if ($publicacion->usuario == "usuarioPago") {

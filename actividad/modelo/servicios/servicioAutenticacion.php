@@ -6,10 +6,13 @@ class ServicioAutenticacion
     public static function validarUsuarioContrasena($usuario, $contrasena)
     {
 
-        $resultado = MySqlBd::consultaLectura("SELECT contrasena FROM usuarios WHERE nombre = ?", $usuario);
+        $url = ApiHelper::getApiUrl();
+        $url .= "autenticacion.php";
 
-        $hash = hash("sha256", $contrasena);
+        $loginDto = new LoginDto($usuario, $contrasena);
 
-        return count($resultado) == 1 && $resultado[0]["contrasena"] == $hash;
+        $respuesta = ApiHelper::solicitar($url, "POST", $loginDto);
+
+        return $respuesta->codigoRespuesta == 200;
     }
 }

@@ -3,7 +3,7 @@ class DaoPublicacionesMySql
 {
     public function crear($publicacion)
     {
-        $usuario = $publicacion->usuario == "depago" ? 1 : 0;
+        $usuario = $publicacion->usuario == "usuarioPago" ? 1 : 0;
         $fecha = $publicacion->fecha->format("c");
         $consulta = "INSERT INTO mensajes (nombre, depago, texto, fecha)
             VALUES (?, ?, ?, ?)";
@@ -21,7 +21,7 @@ class DaoPublicacionesMySql
     }
     public function actualizar($publicacion)
     {
-        $usuario = $publicacion->usuario == "depago" ? 1 : 0;
+        $usuario = $publicacion->usuario == "usuarioPago" ? 1 : 0;
         $fecha = $publicacion->fecha->format("c");
         $consulta = "UPDATE mensajes SET nombre = ?, depago = ?, texto = ?, fecha = ? WHERE id = ?";
 
